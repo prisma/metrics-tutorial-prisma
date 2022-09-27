@@ -1,0 +1,8 @@
+node_modules
+prisma/dev.db
+.idea 
+.vscode 
+
+.DS_Store
+
+prometheus/data/*

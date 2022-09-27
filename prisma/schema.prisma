@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id        Int      @id @default(autoincrement())
+  title     String   @unique()
+  body      String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Audit {
+  id        String   @id @default(uuid())
+  tableName Tables
+  recordId  Int
+  action    Actions
+  createdAt DateTime @default(now())
+}
+
+enum Tables {
+  Article
+}
+
+enum Actions {
+  CREATE
+  UPDATE
+  DELETE
+}

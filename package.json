@@ -1,0 +1,30 @@
+{
+  "name": "tracing-tutorial-draft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src server.ts",
+    "loadtest": "docker run -i grafana/k6 run - <loadtest.js"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.3.1",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "prisma": "^4.3.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "@types/express": "^4.17.13",
+    "prisma": "^4.3.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0"
+  }
+}
