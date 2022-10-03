@@ -9,7 +9,13 @@ services:
       - postgres:/var/lib/postgresql/data
     ports:
       - '5432:5432'
-
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ${PWD}/prometheus:/prometheus-data
+    command: --config.file=/prometheus-data/prometheus.yml
+    ports:
+      - 9090:9090
 volumes:
   postgres:
 

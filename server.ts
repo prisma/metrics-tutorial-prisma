@@ -183,6 +183,13 @@ app.get("/random", async (_req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+app.get("/metrics", async (_req, res: Response) => {
+  res.set("Content-Type", "text");
+  let metrics = await prisma.$metrics.prometheus();
+  res.status(200).end(metrics);
+});
+
+
 // error handler
 app.use((error, request, response, next) => {
   console.error(error);
