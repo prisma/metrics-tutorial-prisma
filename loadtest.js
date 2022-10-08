@@ -2,8 +2,8 @@ import http from "k6/http";
 import { check, fail, sleep } from "k6";
 
 export const options = {
-  vus: 20,
-  duration: "100s",
+  vus: 5,
+  duration: "500s",
 };
 
 const port = __ENV.PORT || 4000;
