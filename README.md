@@ -10,4 +10,4 @@ Reference code for ["Metrics for Your Database Using Prometheus, Grafana and Pri
 4. Start the PostgreSQL database on port 5432 with Docker: `docker-compose up`.
 5. Run migrations: `npx prisma migrate dev`.
 6. Start the server: `npm run dev`.
-7. Test the endpoints using the loadtest: `npm run loadtest`.
+7. Test the API endpoints using the load testing script: `npm run loadtest`.
