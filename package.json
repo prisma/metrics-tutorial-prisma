@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src server.ts",
-    "loadtest": "docker run -i grafana/k6 run - <loadtest.js"
+    "loadtest": "docker run --add-host=host.docker.internal:host-gateway -i grafana/k6 run - <loadtest.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
