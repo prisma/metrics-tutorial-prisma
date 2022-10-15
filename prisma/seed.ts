@@ -29,7 +29,7 @@ async function main() {
         data: {
           tableName: "Article",
           recordId: article.id,
-          action: "CREATE",
+          action: "Create",
         },
       });
     }

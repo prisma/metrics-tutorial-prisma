@@ -82,7 +82,7 @@ app.patch(
           data: {
             tableName: "Article",
             recordId: article.id,
-            action: "UPDATE",
+            action: "Update",
           },
         });
         return res.status(201).json(article);
@@ -112,7 +112,7 @@ app.post(
           data: {
             tableName: "Article",
             recordId: article.id,
-            action: "CREATE",
+            action: "Create",
           },
         });
         res.status(201).json(article);
@@ -138,7 +138,7 @@ app.delete(
           data: {
             tableName: "Article",
             recordId: article.id,
-            action: "DELETE",
+            action: "Delete",
           },
         });
         return res.status(200).json(article);
