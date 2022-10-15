@@ -2,7 +2,7 @@
 CREATE TYPE "Tables" AS ENUM ('Article');
 
 -- CreateEnum
-CREATE TYPE "Actions" AS ENUM ('CREATE', 'UPDATE', 'DELETE');
+CREATE TYPE "Actions" AS ENUM ('Create', 'Update', 'Delete');
 
 -- CreateTable
 CREATE TABLE "Article" (

@@ -33,7 +33,7 @@ enum Tables {
 }
 
 enum Actions {
-  CREATE
-  UPDATE
-  DELETE
+  Create
+  Update
+  Delete
 }
