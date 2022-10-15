@@ -2,14 +2,14 @@ import http from "k6/http";
 import { check, fail, sleep } from "k6";
 
 export const options = {
-  vus: 5,
+  vus: 3,
   duration: "500s",
 };
 
 const port = __ENV.PORT || 4000;
 const baseUrl = `http://host.docker.internal:${port}`;
-const minSleep = 0.005;
-const maxSleep = 0.05;
+const minSleep = 0.05;
+const maxSleep = 0.5;
 
 function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
