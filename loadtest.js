@@ -3,12 +3,12 @@ import { check, fail, sleep } from "k6";
 
 export const options = {
   vus: 3,
-  duration: "500s",
+  duration: "5s",
 };
 
 const port = __ENV.PORT || 4000;
 const baseUrl = `http://host.docker.internal:${port}`;
-const minSleep = 0.05;
+const minSleep = 0.1;
 const maxSleep = 0.5;
 
 function getRandomFloat(min, max) {
@@ -87,11 +87,10 @@ export default function () {
   }
 
   // GET /random
-  for (let i = 0; i < 5; i++) {
-    sleep(getRandomFloat(minSleep, maxSleep));
-    let randomResponse = http.get(`${baseUrl}/random`);
-    check(randomResponse, {
-      "is GET /random request status 200": (r) => r.status === 200,
-    });
-  }
+
+  sleep(getRandomFloat(minSleep, maxSleep));
+  let randomResponse = http.get(`${baseUrl}/random`);
+  check(randomResponse, {
+    "is GET /random request status 200": (r) => r.status === 200,
+  });
 }
