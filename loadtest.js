@@ -3,7 +3,7 @@ import { check, fail, sleep } from "k6";
 
 export const options = {
   vus: 3,
-  duration: "5s",
+  duration: "500s",
 };
 
 const port = __ENV.PORT || 4000;
