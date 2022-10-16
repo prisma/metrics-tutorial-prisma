@@ -159,14 +159,14 @@ app.get("/random", async (_req: Request, res: Response, next: NextFunction) => {
     );
 
     let results = await Promise.all(promises);
-    let r1 = prisma.$executeRaw`SELECT pg_sleep(1);`;
-    let r2 = prisma.$executeRaw`SELECT pg_sleep(0.3);`;
+    let r1 = prisma.$executeRaw`SELECT pg_sleep(0.05);`;
+    let r2 = prisma.$executeRaw`SELECT pg_sleep(0.08);`;
     await Promise.allSettled([r1, r2]);
 
     let p1 = prisma
       .$transaction(
         async (tx) => {
-          await tx.$executeRaw`SELECT pg_sleep(0.1);`;
+          await tx.$executeRaw`SELECT pg_sleep(0.02);`;
         },
         { timeout: 30000 }
       )
