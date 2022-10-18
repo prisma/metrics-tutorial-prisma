@@ -1,6 +1,6 @@
 ## Prisma metrics tutorial
 
-Reference code for ["Metrics for Your Database Using Prometheus, Grafana and Prisma"](https://www.prisma.io/blog/metrics-tutorial-prisma-pmoldgq10kz).
+Reference code for ["Database Metrics with Prisma, Prometheus & Grafana"](https://www.prisma.io/blog/metrics-tutorial-prisma-pmoldgq10kz).
 
 ### Installation
 
